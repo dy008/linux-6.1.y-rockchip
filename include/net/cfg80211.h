@@ -7171,6 +7171,23 @@ void cfg80211_rx_unprot_mlme_mgmt(struct net_device *dev,
 				  const u8 *buf, size_t len);
 
 /**
+ * cfg80211_ssid_eq - compare two SSIDs
+ * @a: first SSID
+ * @b: second SSID
+ *
+ * Return: %true if SSIDs are equal, %false otherwise.
+ */
+static inline bool
+cfg80211_ssid_eq(struct cfg80211_ssid *a, struct cfg80211_ssid *b)
+{
+	if (WARN_ON(!a || !b))
+		return false;
+	if (a->ssid_len != b->ssid_len)
+		return false;
+	return memcmp(a->ssid, b->ssid, a->ssid_len) ? false : true;
+}
+
+/**
  * cfg80211_michael_mic_failure - notification of Michael MIC failure (TKIP)
  * @dev: network device
  * @addr: The source MAC address of the frame
