@@ -544,6 +544,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126bp-evb-v14.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126bp-evb-v14-dual-cam.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126bp-evb1-v12.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126bp-evb1-v12-fastboot-emmc.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3588s-sy2223.dtb
 
 subdir-y := $(dts-dirs) overlay
 
